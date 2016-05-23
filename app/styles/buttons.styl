@@ -1,0 +1,32 @@
+.button
+  color: $light
+  border: 3px solid $light
+  font-weight: 500
+  font-size: 3em
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration none
+  text-transform: uppercase
+  height: 50px
+  padding: 0 40px
+  border-radius: 30px
+  appearance: none //why?? accessibility?
+  cursor: pointer //why? does this default on chrome
+  &:hover, &:focus
+    background-color: $green
+    color: white
+    border-color: white
+    
+.button1
+  margin-bottom: 2em
+  display: block
+  
+.button-3d
+  background-color: #FFF
+  box-shadow: 0 7px 0 $light, 0 8px 3px rgba(0, 0, 0, 0.3)
+  &:hover
+    background-color: #FFF
+    border-color: $light
+    color: $light
+    box-shadow 0 3px 0 $light
+    margin-top: 4px
+    display: block
