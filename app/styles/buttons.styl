@@ -1,32 +1,84 @@
+//Default button
 .button
   color: $light
   border: 3px solid $light
+  transition: all .3s ease-in
   font-weight: 500
   font-size: 3em
-  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-decoration none
   text-transform: uppercase
   height: 50px
   padding: 0 40px
   border-radius: 30px
   appearance: none //why?? accessibility?
-  cursor: pointer //why? does this default on chrome
+  cursor: pointer //why? seems to be default on chrome
   &:hover, &:focus
-    background-color: $green
+    background-color: invert($bg-light)
     color: white
     border-color: white
-    
+
+//Default button container
 .button1
   margin-bottom: 2em
-  display: block
-  
+  display: flex
+
+//3D "Clickable" button
 .button-3d
   background-color: #FFF
   box-shadow: 0 7px 0 $light, 0 8px 3px rgba(0, 0, 0, 0.3)
+  transition .15s all ease-in
   &:hover
     background-color: #FFF
     border-color: $light
     color: $light
     box-shadow 0 3px 0 $light
-    margin-top: 4px
+    margin-top: 4px //moves lower elements down 4px
     display: block
+
+//A "stoplight" that changes color and text. WIP
+.stop-light 
+  font-size: 2em
+  font-weight: 700
+  width: 100px
+  height: 100px
+  background-color: desaturate(red, 50%)
+  border-color: white
+  color: white
+  transition: background-color .1s ease-in
+  border-radius: 100px
+  box-shadow: 0 7px 0 $light, 0 8px 3px rgba(0, 0, 0, 0.3)
+  padding: 0em !important
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  overflow: hidden
+  z-index: 1
+  &:hover, &:focus
+    background-color: $green
+    color: white
+    border-color: white
+  .content
+    will-change: transform, opacity //where are they changing?
+    transition: right 0.3s ease 0s
+  .visible
+    left: auto
+    right: 0%
+    position: relative
+    margin-right: 1.5em
+    &:hover, &:focus
+      left: auto
+      right: 200%
+  .hidden
+    top: 50%
+    left: auto
+    right: -100%
+    margin-top: -0.5em
+    position: absolute
+    width: 100%
+    &:hover, &:focus
+      left: auto
+      right: 0%
+    //make it say GO on hover - starting to work
+    //make it go yellow for a bit
+    //before back to red when cursor moves away
