@@ -1,6 +1,6 @@
 //Default button
 .button
-  color: $light
+  color: $light //should get the colors out of here. make a mixin maybe
   border: 3px solid $light
   transition: all .3s ease-in
   font-weight: 500
@@ -16,23 +16,39 @@
     background-color: invert($bg-light)
     color: white
     border-color: white
+    
+//Container for all buttons
+.buttons
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  justify-content: space-between
+  width: 100%
 
 //Default button container
 .button1
   margin-bottom: 2em
   display: flex
+  align-items: center
+  justify-content: center
+  width: 33%
 
 //3D "Clickable" button
+//Only clicks on hover
 .button-3d
   background-color: #FFF
   box-shadow: 0 7px 0 $light, 0 8px 3px rgba(0, 0, 0, 0.3)
   transition .15s all ease-in
-  &:hover
+  &:hover, &:focus
+    background-color: #FFF
+    border-color: $light
+    color: $green2
+  &:active
     background-color: #FFF
     border-color: $light
     color: $light
     box-shadow 0 3px 0 $light
-    margin-top: 4px //moves lower elements down 4px
+    margin-top: 4px //moves lower elements down 4px. Fixed w/ container
     display: block
 
 //A "stoplight" that changes color and text. WIP
@@ -52,21 +68,24 @@
   align-items: center
   justify-content: center
   position: relative
-  overflow: hidden
+  // overflow: hidden
   z-index: 1
   &:hover, &:focus
     background-color: $green
     color: white
     border-color: white
   .content
-    will-change: transform, opacity //where are they changing?
-    transition: right 0.3s ease 0s
+    transition: 0.3s ease 0s
+    padding: 1em
+    position: absolute
   .visible
+    color: rgba(255, 255, 255, 100)
     left: auto
     right: 0%
     position: relative
     margin-right: 1.5em
     &:hover, &:focus
+      color: rgba(255, 255, 255, 0)
       left: auto
       right: 200%
   .hidden
