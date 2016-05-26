@@ -24,6 +24,8 @@
   align-items: center
   justify-content: space-between
   width: 100%
+  border-bottom: 3px solid complement($bg-light)
+  border-top: 3px solid complement($bg-light)
 
 //Default button container
 .button1
@@ -101,3 +103,19 @@
     //make it say GO on hover - starting to work
     //make it go yellow for a bit
     //before back to red when cursor moves away
+
+//class to square a button
+.button-square
+  border-radius: 0
+  
+//A "normal" button. A normal, ugly button
+.button-normal
+  border-radius: 3px
+  font-size: 2em
+  width: 70px
+  height: 40px
+  padding: 0
+  margin: 0
+  border: 0
+  background-color: $green
+  
