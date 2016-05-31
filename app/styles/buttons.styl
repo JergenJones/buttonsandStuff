@@ -1,22 +1,3 @@
-//Default button
-.button
-  color: $light //should get the colors out of here. make a mixin maybe
-  border: 3px solid $light
-  transition: all .3s ease-in
-  font-weight: 500
-  font-size: 3em
-  text-decoration none
-  text-transform: uppercase
-  height: 50px
-  padding: 0 40px
-  border-radius: 30px
-  appearance: none //why?? accessibility?
-  cursor: pointer //why? seems to be default on chrome
-  &:hover, &:focus
-    background-color: invert($bg-light)
-    color: white
-    border-color: white
-    
 //Container for all buttons
 .buttons
   display: flex
@@ -34,6 +15,25 @@
   align-items: center
   justify-content: center
   width: 33%
+
+//Default button
+.button
+  color: $light //should get the colors out of here. make a mixin maybe
+  border: 3px solid $light
+  transition: all .3s ease-in
+  font-weight: 500
+  font-size: 3em
+  text-decoration: none
+  text-transform: uppercase
+  height: 50px
+  padding: 0 40px
+  border-radius: 30px
+  appearance: none //why?? accessibility?
+  cursor: pointer //why? seems to be default on chrome
+  &:hover, &:focus
+    background-color: invert($bg-light)
+    color: white
+    border-color: white
 
 //3D "Clickable" button
 //Only clicks on hover
@@ -103,6 +103,7 @@
     //make it say GO on hover - starting to work
     //make it go yellow for a bit
     //before back to red when cursor moves away
+    //:before and :after might be a solution
 
 //class to square a button
 .button-square

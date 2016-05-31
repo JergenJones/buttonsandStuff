@@ -1,0 +1,19 @@
+h1
+  font-family: $font-family-h2
+  color: $color-h2
+  font-size: $font-size-h2
+  
+.cont
+  height: 500px
+  width: 800px
+  background-color: orange
+  position: relative
+  &:hover
+    .box
+      background-color: darken(desaturate(complement(orange), 30%), 30%)
+      
+
+hoverBounce(".box", "top-left", 180px)
+hoverBounce(".box2", "top-right", 180px)
+hoverBounce(".box3", "bottom-left", 180px)
+hoverBounce(".box4", "bottom-right", 180px)

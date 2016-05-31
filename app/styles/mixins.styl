@@ -1,0 +1,46 @@
+padding(left = 1em , right = 1em)
+  padding-left: left
+  padding-right: right
+
+hoverBounce($class, $position, $size = 50px)
+  {$class}
+    height: $size
+    width: 1.6 * $size
+    position: absolute
+    background-color: complement(orange)
+    cursor: pointer
+    if $position == "top-left"
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+    if $position == "top-right"
+      top: 0
+      bottom: 0
+      right: 0
+      left: calc(100%-$size)
+    if $position == "bottom-left"
+      top: calc(100%-$size)
+      bottom: 0
+      right: 0
+      left: 0
+    if $position == "bottom-right"
+      top: calc(100%-$size)
+      bottom: 0
+      right: 0
+      left: calc(100%-$size)
+    top: top
+    bottom: bottom
+    right: right
+    left: left
+    &:hover
+      animation-name: bounce
+      animation-duration: 1s
+      animation-iteration-count: infinite
+      
+@keyframes bounce{
+  50% {
+    background-color: #FFF
+    
+  }
+}

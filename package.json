@@ -9,6 +9,7 @@
   "dependencies": {
     "browser-sync-brunch": "0.0.9",
     "jquery": "^2.2.1",
-    "stylus-brunch": "^2.0.0"
+    "stylus-brunch": "^2.0.0",
+     "ctr": "git+https://c6bd2847541ef480767db1f3ca8034039d851cf6:x-oauth-basic@github.com/artisin/ctr.git#1ffada1"
   }
 }

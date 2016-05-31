@@ -1,0 +1,44 @@
+ctr(".menuBar",{
+  width: 1200px
+  height: 50px
+  background-color: $light
+  margin-top: 1em
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: center
+  comp: {
+    ".logo": {
+      padding-left: 1em
+      font-size: 1.5em
+      font-weight: 600
+      font-family: sans-serif
+    }
+    ul: {
+      width: 50%
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-around
+      comp: {
+        li: {
+          list-style-type: none
+          font-family: sans-serif
+          padding: 1em
+          comp: {
+            a: {
+              text-decoration: none
+              hover: {
+                on: {
+                  color: $purp
+                }
+                non: {
+                  color: $green
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+})

@@ -4,3 +4,6 @@ module.exports = config:
       'libraries.js': /^(?!app\/)/
       'app.js': /^app\//
     stylesheets: joinTo: 'app.css'
+  plugins:
+    stylus:
+      plugins: ['ctr']

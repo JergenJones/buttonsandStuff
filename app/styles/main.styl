@@ -1,28 +1,48 @@
 @import 'variables'
-@import 'buttons'
+@import 'mixins'
+@import 'test'
+@import 'ctrTest'
+@import 'menu'
+// // @import 'buttons'
 
 body 
-  font-family: $font
-  font-size: 16px
-  background: $bg-light
-  color: default-text
-  display: flex
-  flex-flow: column wrap
-  align-items: center
-  text-align center
-  height: 800px
-  margin: 0
+//   font-family: $font
+//   font-size: 16px
+//   background: $bg-light
+//   color: default-text
+//   display: flex
+//   flex-flow: column wrap
+//   align-items: center
+//   text-align center
+//   height: 800px
+  margin: 0 //Don't forget this!!
   
-.intro
-  margin-bottom: 1em
-  width: 100%
+// .intro
+//   margin-bottom: 1em
+//   width: 100%
   
-h1 
-  font-size: 2em
-  margin: 0.5em 1em 1em
+// h1 
+//   font-size: 2em
+//   margin: 0.5em 1em 1em
+//   padding-top: .5em
 
-  & > small 
-    color: darken($light, 40)
-    font-size: 70%
+//   & > small 
+//     color: darken($light, 40)
+//     font-size: 70%
   
 
+/*hoverBounce($class, top = 0, bottom = 0, right = 0, left = 0)
+  {$class}
+    height: 50px
+    width: 50px
+    top: top
+    bottom: bottom
+    right: right
+    left: left
+    position: absolute
+    background-color: complement(orange)
+    cursor: pointer
+    &:hover
+      animation-name: bounce
+      animation-duration: 1s
+      animation-iteration-count: infinite*/
