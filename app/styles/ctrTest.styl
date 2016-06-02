@@ -2,7 +2,6 @@ ctr(".ctrTest",{
   width: 1200px
   height: 400px
   background-color: $green
-  margin-top: 1em
   display: flex
   flex-flow: row wrap
   justify-content: space-around
@@ -12,20 +11,21 @@ ctr(".ctrTest",{
       display: flex
       justify-content: center
       align-items: center
+      height: 200px
+      width: 200px
+      cursor: pointer
       hover: {
         on: {
           background-color: $orange
-          height: 220px
-          width: 220px
           color: white
           font-size: 2em
+          transform: scale(1.1)
         }
         non: {
           background-color: $purp
-          height: 200px
-          width: 200px
           color: $purp
           font-size: 1em
+          transform: scale(1)
         }
       }
     }

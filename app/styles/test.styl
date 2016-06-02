@@ -1,8 +1,25 @@
-h1
-  font-family: $font-family-h2
-  color: $color-h2
-  font-size: $font-size-h2
-  
+body 
+  background-color: $light
+  display: flex
+  flex-flow: column wrap
+  align-items: center
+  text-align center
+  margin: 0 0 10em 0 //Don't forget this if not using reset
+  & > div
+    margin-bottom: 3em
+    
+.intro
+  h1
+    font-family: $font-family-h2
+    color: $color-h2
+    font-size: $font-size-h2
+  small 
+    color: $text
+    font-size: 60%
+  p
+    color: $text
+    font-family: $font-family-h2
+
 .cont
   height: 500px
   width: 800px

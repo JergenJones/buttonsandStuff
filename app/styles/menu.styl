@@ -1,7 +1,8 @@
 ctr(".menuBar",{
+  // edit: true
+  background-color: $light
   width: 1200px
   height: 50px
-  background-color: $light
   margin-top: 1em
   display: flex
   flex-flow: row wrap
@@ -9,10 +10,32 @@ ctr(".menuBar",{
   align-items: center
   comp: {
     ".logo": {
-      padding-left: 1em
-      font-size: 1.5em
-      font-weight: 600
-      font-family: sans-serif
+      margin-left: 1em
+        hover: {
+          on: {
+            transform: scale(1.1)
+          }
+          non: {
+            transform: scale(1)
+          }
+        }
+      comp: {
+        a: {
+          font-size: 1.5em
+          font-weight: 600
+          font-family: sans-serif
+          text-decoration: none
+          padding: .4em
+          hover: {
+            on: {
+              color: $green
+            }
+            non: {
+              color: $purp
+            }
+          }
+        }
+      }
     }
     ul: {
       width: 50%
@@ -22,11 +45,25 @@ ctr(".menuBar",{
       comp: {
         li: {
           list-style-type: none
-          font-family: sans-serif
-          padding: 1em
+          non: {
+            key: ':last-child'
+              border-right: 2px solid $light
+          }
+          hover: {
+            on: {
+              transform: scale(1.1)
+            }
+            non: {
+              transform: scale(1)
+            }
+          }
           comp: {
             a: {
               text-decoration: none
+              padding: 1em
+              margin-right: 2em
+              font-family: sans-serif
+              font-weight: 600
               hover: {
                 on: {
                   color: $purp

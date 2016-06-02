@@ -1,0 +1,207 @@
+centerContent = CtrClass({
+  display: flex
+  justify-content: center
+  align-items: center  
+})
+
+
+//Single angry card
+ctr(".angryBox",{
+  // edit: true
+  width: 400px
+  height: 300px
+  perspective: 1000px 
+  perspective-origin: top 
+  margin-bottom: 200px
+  comp: {
+    '.angryCard': {
+    width: 100%
+    height: 100%
+    background-color: $text
+    font-size: 2em
+    font-family: sans-serif
+    display: flex
+    justify-content: center
+    align-items: center
+    hover: {
+      on: {
+        transform: rotateY(0deg) scale(2)
+        color: desaturate(red, 20%)    
+      }
+      non: {
+        transform: rotateY(55deg) scale(1)
+        color: $text
+      }
+     }
+    }
+  }
+})
+
+.container
+  width: 200px
+  height: 260px
+  background-color: $banana
+  position: relative
+  perspective: 800px
+  
+ctr(".card",{
+  width: 100%
+  height: 100%
+  position: absolute
+  transform-style: preserve-3d
+  comp: {
+    ".figure": {
+      margin: 0
+      position: absolute
+      width: 100%
+      height: 100%
+      extend: centerContent
+      color: white
+      font-size: 3em
+      font-family: sans-serif
+      font-weight: 500
+      hover: {
+        global: {
+          option: {
+            attachTo: 0
+          }
+        }
+        on: {
+          transform: none
+        }
+        non: {
+          transform: rotateY(-180deg)
+        }
+      }
+    }
+    ".front": {
+      background-color: red
+      comp: {
+        p: {
+          transform: rotateY(180deg)
+        }
+      }
+      
+    }
+    ".back": {
+      background-color: blue
+    }
+  }
+})
+
+//Flipgrid - 12 flipping cards
+ctr(".flipGrid",{
+  edit: true
+  width: 1200px
+  height: 900px
+  background-color: opacity($orange, .9)
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  align-items: center
+  // perspective: 2800px
+  // perspective-origin: top left
+  comp: {
+    ".container": {
+        height: 298px
+        width: 298px
+        perspective: 1200px
+        perspective-origin: top left
+      comp: {
+        ".card": {
+          width: 100%
+          height: 100%
+          position: aboslute
+          transform-style: preserve-3d
+          comp: {
+            ".figure": {
+              margin: 0
+              position: absolute
+              width: 100%
+              height: 100%
+              // extend: centerContent
+              color: white
+              font-size: 3em
+              font-family: sans-serif
+              font-weight: 500
+              hover: {
+                global: {
+                  option: {
+                    attachTo: ".container"
+                  }
+                }
+                on: {
+                  transform: none
+                }
+                non: {
+                  transform: rotateY(-180deg)
+                }
+              }
+            }
+            ".front": {
+              background-color: $orange
+              comp: {
+                p: {
+                  transform: rotateY(180deg)
+                }
+              }
+            }
+            ".back": {
+              background-color: $purp
+              comp: {
+                p: {
+                  transform: rotateY(180deg)
+                }
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  }
+})
+//       hover: {
+//         on: {
+//           transform: rotateX(180deg)
+//         }
+//         non: {
+//           transform: rotateX(0deg)
+//         }
+//       }
+//       comp: {
+//         global: {
+//           key: '.back' '.front'
+//           height: 100%
+//           width: 100%
+//           position: absolute
+//           backface-visibility: hidden
+//           margin: 0
+//           display: flex
+//           justify-content: center
+//           align-items: center
+//           font-size: 2em
+//           font-family: sans-serif
+//           color: $purp
+//         }
+//         ".back": {
+//           hover: {
+//             on: {
+//               transform: none
+//             }
+//             non: {
+//               transform: rotateX(180deg)
+//             }
+//           }
+//         }
+//         ".front": {
+//           hover: {
+//             on: {
+//               transform: rotateX(180deg)
+//             }
+//             non: {
+//               transform: none
+//             }
+//           }
+//         }
+//       }
