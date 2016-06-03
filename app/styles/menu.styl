@@ -27,10 +27,10 @@ ctr(".menuBar",{
           padding: .4em
           hover: {
             on: {
-              color: $green
+              color: $green2
             }
             non: {
-              color: $purp
+              color: $purp2
             }
           }
         }
@@ -64,8 +64,18 @@ ctr(".menuBar",{
                   color: $purp
                 }
                 non: {
-                  color: $green
+                  color: $green2
                 }
+              }
+            }
+            '.active': {
+              hover: {
+                on: {
+                  background-color: default
+                }
+                non: {
+                  background-color: $darker
+                } 
               }
             }
           }
