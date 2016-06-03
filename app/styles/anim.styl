@@ -1,0 +1,384 @@
+ctr(".anim1",{
+  height: 200px
+  width: 200px
+  background-color: $green
+  box-shadow: $box-shadow
+  anim: {
+    option: {
+      name: 'colorChange'
+      count: 1
+      duration: 3s
+      ease: steps(90, start)
+    }
+    timeline: {
+      '10%': {
+        transform: rotate3d(1, 1, 1, 36deg) ////not working
+      }
+      '20%': {
+        transform: rotate3d(1, 1, 1, 72deg)
+      }
+      '30%': {
+        background-color: $orange
+        transform: rotate3d(1, 1, 1, 108deg)
+      }
+      '40%': {
+        transform: rotate3d(1, 1, 1, 144deg)
+      }
+      '50%': {
+        transform: rotate3d(1, 1, 1, 180deg)
+      }
+      '60%': {
+        transform: rotate3d(1, 1, 1, 216deg)
+      }
+      '70%': {
+        background-color: $purp
+        transform: rotate3d(1, 1, 1, 252deg)
+      }
+      '80%': {
+        transform: rotate3d(1, 1, 1, 288deg)
+      }
+      '90%': {
+        transform: rotate3d(1, 1, 1, 324deg)
+      }
+      '100%': {
+        transform: rotate3d(1, 1, 1, 360deg)
+      }
+    }
+  }
+})
+
+.boxText
+  margin-top: 5em
+  width: 100%
+  height: 100vh
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  position: relative
+  background-image: url('./img/warning-quarantine-zone.png')
+  p
+    background-color: white
+    font-family: $font-family-h2
+    height: 65px
+    width: 500px
+    color: red
+    font-size: 2em
+
+ctr('.anim2', {
+  // height: 20px
+  // width: 40px
+  border-radius: 30px
+  background-color: $green
+  box-shadow: $box-shadow
+  position: absolute
+  cursor: pointer
+  top: 40%
+  bottom: 40%
+  left: 40%
+  right: 40%
+  hover: {
+    on: {
+      anim: {
+        option: {
+          name: popOut
+          duration: 3s
+          count: 1
+          mode: forwards ////
+        }
+        timeline: {
+          '100%': {
+            top: -50%
+            bottom: -30%
+            left: 0
+            right: 0
+            background-color: black
+          }
+        }
+      }
+    }
+  }
+  before: {
+    content: "Boy, you shouldn't 'a done that!"
+    color: transparent
+    position: absolute
+    font-size: 3em
+    width: 1000px
+    top: 50%
+    bottom: 50%
+    left: 25%
+    right: 50%
+    hover: {
+      on: {
+        color: red
+      }
+    }
+  }
+})
+
+ctr('.basicAnim', {
+  height: 200px
+  width: 200px
+  background-color: $orange
+  box-shadow: $box-shadow
+  anim: {
+    option: {
+      name: 'test'
+      duration: 4s
+      mode: forwards
+    } 
+    timeline: {
+      'to': {
+        background-color: white
+      }
+      '50': {
+        background-color: $green
+      }
+      'from': {
+        background-color: $orange
+      }
+    }
+  }
+})
+
+ctr('.animTest', {
+  $$: {
+    delay: 0s
+    duration: 15s
+    c1: alpha(#78C5D6, 0.75)
+    c2: alpha(#459BA8, 0.75)
+    s1: 2px
+    s2: 4px
+    s3: 3px
+    eval: {
+      c1-s: 'alpha(#78C5D6, 0.3)'
+      c2-s: '$$.s1 $$.s2 $$.s3 $$.c1'
+    }
+  }
+  height: 200px
+  width: 200px
+  background-color: $green
+  box-shadow: $box-shadow
+  color: white
+  font-size: 3em
+  anim:{
+    name: 'animTest'
+    option: {
+      duration: '$$.duration'
+    }
+    timeline: {
+      '50': {
+        color: '$$.c1-s'
+        text-shadow: '$$.c2-s'
+      }
+    }
+  }
+})
+
+ctr('.stepAnim', {
+  height: 200px
+  width: 200px
+  background-color: $orange
+  box-shadow: $box-shadow
+  anim: {
+    option: {
+      ease: steps(80, start)
+      duration: 4s
+    }
+    tl: {
+      '50': {
+        transform: rotate3d(1, 1, 1, 180deg)
+      }
+    }
+  }
+})
+
+/*Multiple Method Option A*/
+ctr('.multiTest', {
+  height: 200px
+  width: 200px
+  background-color: $purp
+  box-shadow: $box-shadow
+  border-radius: 0
+  anim: {
+    option: {
+      multiple: true
+      duration: 5s
+      delay: 1.5s
+    }
+    tl: {
+      tlOne: {
+        '50': {
+          background-color: $green3
+        }
+      }
+      tlTwo: {
+        '50': {
+          border-radius: 150px
+        }
+      }
+    }
+  }
+})
+
+/*Multiple Method Option A - Test Two*/
+.sawBox
+  width: 800px
+  height: 210px
+  position: relative
+  border-bottom: 5px dotted purple
+
+ctr('.multiTest2', {
+  position: absolute
+  right: 0
+  left: 70%
+  height: 200px
+  width: 200px
+  background-color: $purp
+  border-radius: 150px
+  border: 7px dotted white
+  anim: {
+    option: {
+      multiple: true
+      duration: 7s
+      ease: steps(140, start)
+    }
+    tl: {
+      sawSpin: {
+        '50': {
+          transform: rotate(-270deg)
+        }
+      }
+      sawMove: {
+        '50': {
+          right: 70%
+          left: 0
+        }
+      }
+    }
+  }
+})
+
+ctr('.cube', {
+  margin-top: 4em
+  height: 100px
+  width: 100px
+  position: relative
+  background-color: $bananaDark
+  box-shadow: $box-shadowL
+  before: {
+    content: ''
+    height: 100px
+    width: 100px
+    position: absolute
+    background-color: $bananaDes
+    top: -10%
+    left: 10%
+    box-shadow: $box-shadowL
+    hover: {
+      on: {
+        transform: translate(15px, -15px)
+      }
+      non: {
+        transform: translate(0)
+      }
+    }
+  }
+  after: {
+    content: ''
+    position: absolute
+    height: 100px
+    width: 100px
+    background-color: $banana
+    top: -20%
+    left: 20%
+    box-shadow: $box-shadowL
+    hover: {
+      on: {
+        transform: translate(30px, -30px)
+      }
+      non: {
+        transform: translate(0)
+      }
+    }
+  }
+})
+
+.greenCube
+  background-color: $green
+  &:before
+    background-color: $green2
+  &:after
+    background-color: $green3
+
+.purpCube
+  background-color: $purp
+  &:before
+    background-color: $purp2
+  &:after
+    background-color: $purp3
+    
+.redCube
+  background-color: $red
+  &:before
+    background-color: $red2
+  &:after
+    background-color: $red3
+    
+.blueCube
+  background-color: $blue
+  &:before
+    background-color: $blue2
+  &:after
+    background-color: $blue3
+    
+.orangeCube
+  background-color: $orange
+  &:before
+    background-color: $orange2
+  &:after
+    background-color: $orange3
+
+ctr('.cubeBounce', {
+  margin-top: 4em
+  height: 200px
+  width: 200px
+  position: relative
+  background-color: $bananaDark
+  box-shadow: $box-shadowL
+  before: {
+    content: ''
+    height: 200px
+    width: 200px
+    position: absolute
+    background-color: $banana
+    top: -10%
+    left: 10%
+    box-shadow: $box-shadowL
+    hover: {
+      on: {
+        transform: translate(15px, -15px)
+      }
+      non: {
+        transform: translate(0)
+      }
+    }
+  }
+  after: {
+    content: ''
+    position: absolute
+    height: 200px
+    width: 200px
+    background-color: $bananaDes
+    top: -20%
+    left: 20%
+    box-shadow: $box-shadowL
+    hover: {
+      on: {
+        transform: translate(30px, -30px)
+      }
+      non: {
+        transform: translate(0)
+      }
+    }
+  }
+})

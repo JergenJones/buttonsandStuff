@@ -1,12 +1,31 @@
 //colors
 $default-bg = desaturate(#475CD1, 25%)
 $light = rgba(71, 92, 250, 0.3)
-$green = desaturate(#64CC14, 55%)
-$green2 = #53B209
-$orange = #FF5419
-$purp = complement($green)
 $text = lighten(black, 50%)
+
+$green = darken(#64CC14, 55%)
+$green2 = #53B209
+$green3 = lighten($green, 20%)
+
+$orange = #FF5419
+$orange2 = lighten($orange, 15%)
+$orange3 = lighten($orange2, 15%)
+
+$purp = complement($green)
+$purp2 = lighten($purp, 15%)
+$purp3 = lighten($purp2, 15%)
+
+$red = desaturate(red, 10%)
+$red2 = lighten($red, 15%)
+$red3 = lighten($red2, 15%)
+
+$blue = desaturate(blue, 10%)
+$blue2 = lighten($blue, 15%)
+$blue3 = lighten($blue2, 15%)
+
 $banana = #ffe135
+$bananaDark = darken(#ffe135, 30%)
+$bananaDes = darken(#ffe135, 15%)
 
 //font
 $font = "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -14,4 +33,7 @@ $font = "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Gran
 $font-size-h2 = 3em
 $color-h2 = darken(#99FF00, 15%)
 $font-family-h2 = Monospace
+
+$box-shadow = '11px 10px 5px 1px rgba(0,0,0,0.2)'
+$box-shadowL = '-10px 11px 5px 1px rgba(0,0,0,0.2)'
 

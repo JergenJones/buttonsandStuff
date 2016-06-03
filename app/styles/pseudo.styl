@@ -1,0 +1,69 @@
+.boxBox
+  width: 100%
+  display: flex
+  justify-content: space-around
+  align-items: center
+
+ctr(".test1",{
+  height: 200px
+  width: 200px
+  background-color: $green
+  box-shadow: $box-shadow
+  ////must have
+  position: relative
+  before: {
+    ///must have content and 'absolute'
+    content: ''
+    position: absolute
+    height: 20px
+    background-color: $orange
+    hover: {
+      on: {
+        left: 0%
+        right: 0%
+      }
+      non: {
+        left: 45%
+        right: 45%
+      }
+    }
+  }
+  after: {
+    content: 'goodbye'
+    position: absolute
+    left: 25%
+    bottom: 0
+    hover: {
+        color: $orange
+        font-size: 2em
+    }
+  }
+})
+
+ctr('.test2', {
+  height: 200px
+  width: 200px
+  background-color: $green
+  box-shadow: $box-shadow
+  position: relative
+  before: {
+    content: ''
+    height: 180px
+    width: 180px
+    background-color: $green2
+    position: absolute
+    hover: {
+      on: {
+        left: 0%
+        right: 10%
+        bottom: 0%
+      }
+      non: {
+        left: 10%
+        right: 0%
+        bottom: 10%
+      }
+    }
+  }
+})
+

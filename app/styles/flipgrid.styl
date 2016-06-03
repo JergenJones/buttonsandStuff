@@ -18,6 +18,7 @@ ctr(".angryBox",{
     width: 100%
     height: 100%
     background-color: $text
+    box-shadow: $box-shadow
     font-size: 2em
     font-family: sans-serif
     display: flex
@@ -44,17 +45,18 @@ ctr(".angryBox",{
   position: relative
   perspective: 800px
   
-ctr(".card",{
+ctr(".cardA",{
   width: 100%
   height: 100%
   position: absolute
   transform-style: preserve-3d
   comp: {
-    ".figure": {
+    ".figureA": {
       margin: 0
       position: absolute
       width: 100%
       height: 100%
+      box-shadow: $box-shadow
       extend: centerContent
       color: white
       font-size: 3em
@@ -74,7 +76,7 @@ ctr(".card",{
         }
       }
     }
-    ".front": {
+    ".frontA": {
       background-color: red
       comp: {
         p: {
@@ -83,7 +85,7 @@ ctr(".card",{
       }
       
     }
-    ".back": {
+    ".backA": {
       background-color: blue
     }
   }
@@ -91,10 +93,11 @@ ctr(".card",{
 
 //Flipgrid - 12 flipping cards
 ctr(".flipGrid",{
-  edit: true
+  // edit: true
   width: 1200px
   height: 900px
   background-color: opacity($orange, .9)
+  box-shadow: $box-shadow
   display: flex
   flex-flow: row wrap
   justify-content: space-around
@@ -147,10 +150,11 @@ ctr(".flipGrid",{
               }
             }
             ".back": {
-              background-color: $purp
+              background-color: transparent ///////
               comp: {
                 p: {
                   transform: rotateY(180deg)
+                  color: transparent //////
                 }
               }
             }
