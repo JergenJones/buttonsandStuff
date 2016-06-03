@@ -303,6 +303,60 @@ ctr('.cube', {
   }
 })
 
+
+ctr('.cubeBounce', {
+  margin-top: 4em
+  height: 100px
+  width: 100px
+  position: relative
+  background-color: $bananaDark
+  box-shadow: $box-shadowL
+  before: {
+    content: ''
+    height: 100px
+    width: 100px
+    position: absolute
+    background-color: $banana
+    top: -10%
+    left: 10%
+    box-shadow: $box-shadowL
+    anim: {
+      option: {
+        name: bouncBefore
+        duration: 1s
+        count: infinite
+      }
+      tl: {
+        '50': {
+          transform: translate(15px, -15px)
+        }
+      }
+    }
+  }
+  after: {
+    content: ''
+    position: absolute
+    height: 100px
+    width: 100px
+    background-color: $bananaDes
+    top: -20%
+    left: 20%
+    box-shadow: $box-shadowL
+    anim: {
+      option: {
+        name: bouncyAfter
+        duration: 1s
+        count: infinite
+      }
+      tl: {
+        '50': {
+        transform: translate(30px, -30px)
+        }
+      }
+    }
+  }
+})
+
 .greenCube
   background-color: $green
   &:before
@@ -337,48 +391,3 @@ ctr('.cube', {
     background-color: $orange2
   &:after
     background-color: $orange3
-
-ctr('.cubeBounce', {
-  margin-top: 4em
-  height: 200px
-  width: 200px
-  position: relative
-  background-color: $bananaDark
-  box-shadow: $box-shadowL
-  before: {
-    content: ''
-    height: 200px
-    width: 200px
-    position: absolute
-    background-color: $banana
-    top: -10%
-    left: 10%
-    box-shadow: $box-shadowL
-    hover: {
-      on: {
-        transform: translate(15px, -15px)
-      }
-      non: {
-        transform: translate(0)
-      }
-    }
-  }
-  after: {
-    content: ''
-    position: absolute
-    height: 200px
-    width: 200px
-    background-color: $bananaDes
-    top: -20%
-    left: 20%
-    box-shadow: $box-shadowL
-    hover: {
-      on: {
-        transform: translate(30px, -30px)
-      }
-      non: {
-        transform: translate(0)
-      }
-    }
-  }
-})

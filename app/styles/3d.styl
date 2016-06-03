@@ -1,0 +1,219 @@
+.boxBoxCube
+  width: 100%
+  height: 300px
+  display: flex
+  justify-content: space-around
+  align-items: center
+  
+
+/*3D Cube*/
+ctr('.cubeWrap', {
+  perspective: 800px
+  perspective-origin: 50% 100px
+  comp: {
+    '.cubeReal': {
+      position: relative
+      width: 200px
+      transform-style: preserve-3d
+      backface-visibility: visible
+      anim: {
+        option: {
+          name: 'cubeSpin'
+          duration: 5s
+          count: infinite
+          ease: linear
+        }
+        tl: {
+          'from': {
+            transform: rotateY(0deg)
+          }
+          'to': {
+            transform: rotateY(360deg)
+          }
+        }
+      }
+      comp: {
+        div: {
+          position: absolute
+          width: 200px
+          height: 200px
+          background-color: $purp3
+          opacity: .8
+          border: 1px solid black
+          display: flex
+          align-items: center
+          justify-content: center
+          color: white
+          text-transform: uppercase
+          font-family: sans-serif
+          font-weight: 700
+          font-size: 2em
+        }
+        ".back": {
+          transform: translateZ(-100px) rotateY(180deg)
+        }
+        ".right": {
+          transform: rotateY(-270deg) translateX(100px)
+          transform-origin: top right
+        }
+        ".left": {
+          transform: rotateY(270deg) translateX(-100px)
+          transform-origin: center left
+        }
+        ".top": {
+          transform: rotateX(-90deg) translateY(-100px)
+          transform-origin: top center
+        }
+        ".bottom": {
+          transform: rotateX(90deg) translateY(100px)
+          transform-origin: bottom center
+        }
+        ".front": {
+          transform: translateZ(100px)
+        }
+      }
+    }
+  }
+})
+
+ctr('.cubeWrapVertical', {
+  perspective: 800px
+  perspective-origin: 50% 100px
+  comp: {
+    '.cubeReal': {
+      position: relative
+      width: 200px
+      transform-style: preserve-3d
+      backface-visibility: visible
+      margin: 0 auto
+      transform-origin: 0 100px
+      anim: {
+        option: {
+          name: 'cubeSpinVert'
+          duration: 5s
+          count: infinite
+          ease: linear
+        }
+        tl: {
+          'from': {
+            transform: rotateX(0deg)
+          }
+          'to': {
+            transform: rotateX(-360deg)
+          }
+        }
+      }
+      comp: {
+        div: {
+          position: absolute
+          width: 200px
+          height: 200px
+          background-color: $green3
+          opacity: .8
+          border: 1px solid black
+          display: flex
+          align-items: center
+          justify-content: center
+          color: white
+          text-transform: uppercase
+          font-family: sans-serif
+          font-weight: 700
+          font-size: 2em
+        }
+        ".back": {
+          transform: translateZ(-100px) rotateX(180deg)
+        }
+        ".right": {
+          transform: rotateY(-270deg) translateX(100px)
+          transform-origin: top right
+        }
+        ".left": {
+          transform: rotateY(270deg) translateX(-100px)
+          transform-origin: center left
+        }
+        ".top": {
+          transform: rotateX(-270deg) translateY(-100px)
+          transform-origin: top center
+        }
+        ".bottom": {
+          transform: rotateX(-90deg) translateY(100px)
+          transform-origin: bottom center
+        }
+        ".front": {
+          transform: translateZ(100px)
+        }
+      }
+    }
+  }
+})
+
+ctr('.cubeWrapTumble', {
+  perspective: 800px
+  perspective-origin: 50% 100px
+  comp: {
+    '.cubeReal': {
+      position: relative
+      width: 200px
+      transform-style: preserve-3d
+      backface-visibility: visible
+      margin: 0 auto
+      transform-origin: 100px 100px
+      anim: {
+        option: {
+          name: 'cubeTumble'
+          duration: 5s
+          count: infinite
+          ease: linear
+        }
+        tl: {
+          'from': {
+            transform: rotateX(0deg) rotateY(0deg)
+          }
+          'to': {
+            transform: rotateX(-360deg) rotateY(360deg)
+          }
+        }
+      }
+      comp: {
+        div: {
+          position: absolute
+          width: 200px
+          height: 200px
+          background-color: $red2
+          opacity: .8
+          border: 1px solid black
+          display: flex
+          align-items: center
+          justify-content: center
+          color: white
+          text-transform: uppercase
+          font-family: sans-serif
+          font-weight: 700
+          font-size: 2em
+        }
+        ".back": {
+          transform: translateZ(-100px) rotateX(180deg)
+        }
+        ".right": {
+          transform: rotateY(-270deg) translateX(100px)
+          transform-origin: top right
+        }
+        ".left": {
+          transform: rotateY(270deg) translateX(-100px)
+          transform-origin: center left
+        }
+        ".top": {
+          transform: rotateX(-270deg) translateY(-100px)
+          transform-origin: top center
+        }
+        ".bottom": {
+          transform: rotateX(-90deg) translateY(100px)
+          transform-origin: bottom center
+        }
+        ".front": {
+          transform: translateZ(100px)
+        }
+      }
+    }
+  }
+})
