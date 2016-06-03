@@ -1,0 +1,99 @@
+cubeBounce = CtrClass({ 
+  $$: {
+    colorBottom: $bananaDark
+    colorMiddle: $banana
+    colorTop: $bananaDes
+    size: 100px
+    $box-shadowL: $box-shadowL 
+  }
+  // margin-top: 4em
+  height: '$$.size'
+  width: '$$.size'
+  position: relative
+  background-color: '$$.colorBottom'
+  box-shadow: '$$.$box-shadowL'
+  before: {
+    content: ''
+    height: '$$.size'
+    width: '$$.size'
+    position: absolute
+    background-color: '$$.colorMiddle'
+    top: -10%
+    left: 10%
+    box-shadow: '$$.$box-shadowL'
+    anim: {
+      option: {
+        name: bouncBefore
+        duration: 1s
+        count: infinite
+      }
+      tl: {
+        '50': {
+          transform: translate(15px, -15px)
+        }
+      }
+    }
+  }
+  after: {
+    content: ''
+    position: absolute
+    height: '$$.size'
+    width: '$$.size'
+    background-color: '$$.colorTop'
+    top: -20%
+    left: 20%
+    box-shadow: '$$.$box-shadowL'
+    anim: {
+      option: {
+        name: bouncyAfter
+        duration: 1s
+        count: infinite
+      }
+      tl: {
+        '50': {
+        transform: translate(30px, -30px)
+        }
+      }
+    }
+  }
+})
+
+cubeBounce('.greenCube', {
+  $$: {
+    colorBottom: $green
+    colorMiddle: $green2
+    colorTop: $green3
+  }
+})
+
+cubeBounce('.purpCube', {
+  $$: {
+    colorBottom: $purp
+    colorMiddle: $purp2
+    colorTop: $purp3
+  }
+})
+
+cubeBounce('.redCube', {
+  $$: {
+    colorBottom: $red
+    colorMiddle: $red2
+    colorTop: $red3
+  }
+})
+
+cubeBounce('.blueCube', {
+  $$: {
+    colorBottom: $blue
+    colorMiddle: $blue2
+    colorTop: $blue3
+  }
+})
+
+cubeBounce('.orangeCube', {
+  $$: {
+    colorBottom: $orange
+    colorMiddle: $orange2
+    colorTop: $orange3
+  }
+})
