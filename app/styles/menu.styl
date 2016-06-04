@@ -10,9 +10,16 @@ ctr(".menuBar",{
   comp: {
     ".logo": {
       margin-left: 1em
+      width: 125px
         hover: {
           on: {
             transform: scale(1.1)
+            anim: {
+              preset: pulse
+              option: {
+                count: infinite
+              }
+            }
           }
           non: {
             transform: scale(1)
@@ -24,13 +31,40 @@ ctr(".menuBar",{
           font-weight: 600
           font-family: sans-serif
           text-decoration: none
+          float: left
           padding: .4em
           hover: {
+            option: {
+              attachTo: '.logo'
+            }
             on: {
               color: $green2
             }
             non: {
               color: $purp2
+            }
+          }
+        }
+        '.span': {
+          comp: {
+            a: {
+              font-weight: 600
+              transform: rotate(90deg)
+              transform-origin: left top 0
+              float: right
+              padding-left: 5px
+              text-decoration: none
+              hover: {
+                option: {
+                  attachTo: '.logo'
+                }
+                on: {
+                  color: $purp2
+                }
+                non: {
+                  color: $banana
+                }
+              }
             }
           }
         }
