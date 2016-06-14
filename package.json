@@ -10,6 +10,6 @@
     "browser-sync-brunch": "0.0.9",
     "jquery": "^2.2.1",
     "stylus-brunch": "^2.0.0",
-     "ctr": "git+https://927291c8e4d34b40a470e6702ddf367a9803a839:x-oauth-basic@github.com/artisin/ctr.git#1ffada1"
+    "ctr": "0.1.25-m"
   }
 }
